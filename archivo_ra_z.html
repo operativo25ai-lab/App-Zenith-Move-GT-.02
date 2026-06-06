@@ -1,12 +1,21 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zenith Move GT</title>
-</head>
-<body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-</body>
-</html>
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+// Importaciones corregidas asegurando que los archivos existan en la carpeta src
+import App from './App';
+import AdminApp from './AdminApp';
+
+// Se comenta la importación de CSS si no ha sido creado aún para evitar errores
+// import './index.css'; 
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/admin" element={<AdminApp />} />
+      </Routes>
+    </BrowserRouter>
+  </React.StrictMode>
+);
